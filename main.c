@@ -3,11 +3,13 @@
 
 static int my_init(void)
 {
+    printk(KERN_INFO "my module is loaded!\n");
     return 0;
 }
 
 static void my_exit(void)
 {
+    printk(KERN_INFO "my module is unloaded!\n");
     return;
 }
 
