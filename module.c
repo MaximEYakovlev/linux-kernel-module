@@ -1,5 +1,12 @@
 #include <linux/init.h>
 #include <linux/module.h>
+#include <linux/interrupt.h>
+
+irqreturn_t irq_handler(int irq, void *dev_id)
+{
+    printk(KERN_INFO "interrupt handled for device %s!\n", (char *)dev_id);
+    return IRQ_HANDLED;
+}
 
 static int my_init(void)
 {
